@@ -1,0 +1,3 @@
+[WEB]
+api_endpoint = https://jsonplaceholder.typicode.com
+api_access_token=''

@@ -38,7 +38,7 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   // buildModules: [
-  //   ['@nuxtjs/dotenv', { path: '/config/', filename: 'mining-server.conf' }]
+  //   ['@nuxtjs/dotenv', { path: '/config/', filename: 'app.conf' }]
   // ],
   /*
   ** Nuxt.js modules
