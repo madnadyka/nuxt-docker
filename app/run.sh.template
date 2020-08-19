@@ -1,0 +1,8 @@
+docker container stop nuxt-js
+docker container rm nuxt-js
+docker run --rm \
+           --name nuxt-js\
+            -v $(pwd)/config:/config/ \
+           -v $(pwd)/src:/web/src\
+           --net=host \
+           -it nuxt-js
