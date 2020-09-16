@@ -6,10 +6,6 @@
                         <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12 pb-2 px-0">
                             <general_data/>
                         </div>
-
-                        <div class="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12 pb-2 px-0">
-                            <additional_data/>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -18,26 +14,24 @@
 
 <script>
     import general_data from "~/components/general_data.vue";
-    import additional_data from "~/components/additional_data.vue";
 
 
     export default {
         layout:'default',
         components: {
-            general_data,
-            additional_data,
+            general_data
         },
         data() {
             return {
-                posts:[],
+                data:[],
                 error_msg:'',
                 timer: ''
             }
         },
         async asyncData ({ $axios }) {
-              let async_data={posts:[]};
-              await $axios.$get('/server/main/dashboard').then(response => {
-                    async_data.posts=response.posts;
+              let async_data={'data':''};
+              await $axios.$get('/server/').then(response => {
+                    async_data.data=response.data;
         })
                 .catch(e => {
                     console.log('error response')
@@ -60,9 +54,9 @@
 
     methods: {
         async getData() {
-         await this.$axios.$get('/server/main/dashboard').then(response => {
+         await this.$axios.$get('/server/').then(response => {
 
-                         this.posts=response.posts;
+                         this.data=response.data;
 
                     })
                     .catch(e => {

@@ -1,10 +1,10 @@
 
-// require('dotenv').config()
+require('dotenv').config({ path: '/config/app.conf'})
 
 module.exports = {
   server: {
-    port: 3000, // default: 3000
-    host: '127.0.0.1' // default: localhost
+    port: process.env.web_port, // default: 3000
+    host: process.env.web_host // default: localhost
   },
   srcDir: 'src/',
   build: {
@@ -37,9 +37,9 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
-  // buildModules: [
-  //   ['@nuxtjs/dotenv', { path: '/config/', filename: 'app.conf' }]
-  // ],
+  buildModules: [
+    ['@nuxtjs/dotenv', { path: '/config/', filename: 'app.conf' }]
+  ],
   /*
   ** Nuxt.js modules
   */

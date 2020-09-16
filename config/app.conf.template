@@ -1,3 +1,5 @@
 [WEB]
+web_port=3000
+web_host=0.0.0.0
 api_endpoint = https://jsonplaceholder.typicode.com
 api_access_token=''

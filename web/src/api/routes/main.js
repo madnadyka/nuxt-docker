@@ -4,12 +4,12 @@ const {Router} = require('express');
 const router = Router();
 
 
-router.get('/user/dashboard', async (req, res) => {
-    let cookies_data = req.cookies;
+router.get('/', async (req, res) => {
 
-        await axios.get(req.app.get('api_endpoint') +"/users/1", {
+        await axios.get(req.app.get('api_endpoint') +"/",  {
             // headers: {'Access-Token': req.app.get('api_access_token')}
         }).then((response) => {
+            // console.log("RESPONSE RECEIVED: ", response['data']);
             res.json(response['data'])
         })
            .catch((e) => {
@@ -25,6 +25,10 @@ router.get('/user/dashboard', async (req, res) => {
                 }
                 res.status(status).json({"error_msg":error})
             });
+
 });
+
+
+
 
 module.exports = router;
